@@ -64,3 +64,10 @@
    ```
 
 5. Open the frontend in your browser by navigating to the specified URL (usually `http://localhost:5000`).
+
+### Usage
+
+1. Upload your dataset in CSV format via the webpage.
+2. Select an algorithm from the provided options.
+3. Click "Run" to execute the algorithm.
+4. View the results directly on the webpage.
