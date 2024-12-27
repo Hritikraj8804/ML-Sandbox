@@ -11,3 +11,16 @@
   - Candidate Key Elimination
 - **Backend Processing**: The selected algorithm is executed using Jupyter Notebook in the backend.
 - **Result Visualization**: The output of the algorithm is displayed in a user-friendly format on the webpage.
+
+## Project Architecture
+
+1. **Frontend**:
+   - Provides an intuitive user interface for dataset upload and algorithm selection.
+   - Built using HTML, CSS, and JavaScript for a seamless user experience.
+
+2. **Backend**:
+   - Handles the execution of machine learning algorithms using Jupyter Notebook.
+   - Processes the uploaded datasets and generates the desired outputs.
+
+3. **Integration**:
+   - The frontend and backend communicate effectively to ensure smooth data transfer and result visualization.
