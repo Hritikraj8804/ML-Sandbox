@@ -103,3 +103,17 @@ We welcome contributions to **ML-SandBox**! To contribute:
    git push origin feature-name
    ```
 5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For questions or support, feel free to reach out:
+- Email: Hritikraj8804@gmail.com.com
+- GitHub: [your-username](https://github.com/Hritikraj8804)
+
+---
+
+We hope you find **ML-SandBox** useful for your machine learning experiments! 🚀
