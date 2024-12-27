@@ -37,3 +37,30 @@
   - numpy
   - scikit-learn
   - flask (or any preferred backend framework)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/ml-sandbox.git
+   cd ml-sandbox
+   ```
+
+2. Set up the Python environment:
+   ```bash
+   python -m venv env
+   source env/bin/activate   # On Windows: env\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. Start Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+
+4. Start the backend server:
+   ```bash
+   python app.py
+   ```
+
+5. Open the frontend in your browser by navigating to the specified URL (usually `http://localhost:5000`).
