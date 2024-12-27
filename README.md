@@ -71,3 +71,16 @@
 2. Select an algorithm from the provided options.
 3. Click "Run" to execute the algorithm.
 4. View the results directly on the webpage.
+
+## Folder Structure
+
+```
+ML-SandBox/
+├── frontend/           # Contains HTML, CSS, and JavaScript files
+├── backend/            # Backend scripts and logic
+├── notebooks/          # Jupyter Notebooks for algorithm execution
+├── datasets/           # Example datasets for testing
+├── requirements.txt    # Python dependencies
+├── app.py              # Backend server script
+└── README.md           # Project documentation
+```
