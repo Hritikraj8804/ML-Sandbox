@@ -24,3 +24,16 @@
 
 3. **Integration**:
    - The frontend and backend communicate effectively to ensure smooth data transfer and result visualization.
+
+## Getting Started
+
+### Prerequisites
+
+- **Python** (version >= 3.7)
+- **Jupyter Notebook**
+- **Node.js** (for frontend setup, if applicable)
+- **Required Python Libraries**:
+  - pandas
+  - numpy
+  - scikit-learn
+  - flask (or any preferred backend framework)
