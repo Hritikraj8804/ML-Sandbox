@@ -112,7 +112,7 @@ This project is licensed under the MIT License.
 
 For questions or support, feel free to reach out:
 - Email: Hritikraj8804@gmail.com.com
-- GitHub: [your-username](https://github.com/Hritikraj8804)
+- GitHub: [Hritik Raj](https://github.com/Hritikraj8804)
 
 ---
 
