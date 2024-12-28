@@ -75,14 +75,47 @@
 ## Folder Structure
 
 ```
-ML-SandBox/
-├── frontend/           # Contains HTML, CSS, and JavaScript files
-├── backend/            # Backend scripts and logic
-├── notebooks/          # Jupyter Notebooks for algorithm execution
-├── datasets/           # Example datasets for testing
-├── requirements.txt    # Python dependencies
-├── app.py              # Backend server script
-└── README.md           # Project documentation
+ml-sandbox/
+├── frontend/                     # Frontend files
+│   ├── templates/                # HTML files
+│   │   ├── index.html            # Main HTML file
+│   │   └── results.html          # Result display page
+│   ├── static/                   # Static files (CSS, JS, images)
+│   │   ├── css/
+│   │   │   └── style.css         # Styling for the webpage
+│   │   ├── js/
+│   │   │   └── main.js           # JavaScript for interactivity
+│   │   └── images/               # Images folder (if any)
+│   └── README.md                 # Frontend README (optional)
+├── backend/                      # Backend code
+│   ├── app.py                    # Flask application
+│   ├── requirements.txt          # Python dependencies
+│   ├── config/                   # Configuration files
+│   │   └── config.py             # App configurations
+│   ├── utils/                    # Utility functions
+│   │   ├── data_processing.py    # Dataset handling and preprocessing
+│   │   ├── algorithms.py         # Algorithms like classification, Find-S
+│   │   └── notebook_runner.py    # Script to run Jupyter Notebooks
+│   └── README.md                 # Backend README (optional)
+├── notebooks/                    # Jupyter notebooks
+│   ├── classification.ipynb      # Notebook for classification
+│   ├── find_s.ipynb              # Notebook for Find-S algorithm
+│   ├── candidate_key.ipynb       # Notebook for candidate key elimination
+│   └── README.md                 # Notebook explanations (optional)
+├── data/                         # Example datasets
+│   ├── sample_dataset.csv        # Sample dataset for testing
+│   └── README.md                 # Dataset README (optional)
+├── docker/                       # Docker configuration files
+│   ├── Dockerfile                # Dockerfile to containerize the app
+│   ├── docker-compose.yml        # Docker Compose file for multi-service setup
+│   └── README.md                 # Docker setup guide (optional)
+├── tests/                        # Testing files
+│   ├── test_app.py               # Tests for Flask routes
+│   ├── test_algorithms.py        # Tests for algorithms
+│   └── README.md                 # Testing README (optional)
+├── README.md                     # Main project README
+└── .gitignore                    # Ignore files for Git
+
 ```
 
 ## Contributing
