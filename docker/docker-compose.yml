@@ -1,17 +1,6 @@
-version: '3.8'
+version: "3.9"
 services:
-  app:
+  flask-app:
     build: .
     ports:
       - "5000:5000"
-    volumes:
-      - ./backend:/app/backend
-      - ./frontend:/app/frontend
-    environment:
-      - FLASK_ENV=development
-  jupyter:
-    image: jupyter/scipy-notebook
-    volumes:
-      - ./notebooks:/home/jovyan/work
-    ports:
-      - "8888:8888"
