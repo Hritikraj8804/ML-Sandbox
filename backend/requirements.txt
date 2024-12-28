@@ -1,0 +1,6 @@
+flask
+pandas
+scikit-learn
+jupyter
+nbconvert
+nbclient

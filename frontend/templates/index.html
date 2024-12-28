@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Sandbox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>ML Sandbox: Run Your Algorithms</h1>
+            <p>Upload your dataset and select an algorithm to process the data</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Choose Algorithm and Dataset</h2>
+            <form action="/run_algorithm" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="dataset">Upload Dataset</label>
+                    <input type="file" name="dataset" id="dataset" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="algorithm">Choose Algorithm</label>
+                    <select name="algorithm" id="algorithm" required>
+                        <option value="classification">Classification</option>
+                        <option value="find_s">Find S</option>
+                        <option value="candidate_key">Candidate Key</option>
+                    </select>
+                </div>
+
+                <button type="submit">Run Algorithm</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ML Sandbox | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
