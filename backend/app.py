@@ -30,8 +30,9 @@ def process():
         result = run_algorithm(dataset_path, algorithm)
         print(f"Algorithm result: {result}")
 
-        return jsonify({"result": result, "dataset": dataset.filename, "algorithm": algorithm})
-
+        # Render the result.html template with the result
+        return render_template('results.html', result=result, algorithm=algorithm)
+    
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": str(e)}), 500
