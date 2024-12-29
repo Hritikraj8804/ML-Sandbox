@@ -50,12 +50,12 @@
    ```bash
    python -m venv env
    source env/bin/activate   # On Windows: env\Scripts\activate
-   pip install -r requirements.txt
    ```
 
-3. Start Jupyter Notebook:
+3. Change directory to backend:
    ```bash
-   jupyter notebook
+   cd backend
+   pip install -r requirements.txt
    ```
 
 4. Start the backend server:
