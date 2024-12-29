@@ -146,7 +146,8 @@ This project is licensed under the MIT License.
 For questions or support, feel free to reach out:
 - Email: Hritikraj8804@gmail.com.com
 - GitHub: [Hritik Raj](https://github.com/Hritikraj8804)
-
+- Linkedin: [Hritik Raj](https://www.linkedin.com/in/hritik-raj-8804hr/)
+- 
 ---
 
 We hope you find **ML-SandBox** useful for your machine learning experiments! 🚀
