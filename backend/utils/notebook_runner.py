@@ -1,24 +1,28 @@
 import nbformat
-from nbconvert import PythonExporter
-from nbclient import NotebookClient
+from nbconvert.preprocessors import ExecutePreprocessor
 import os
 
-def run_notebook(notebook_name, params):
-    """
-    Executes the given Jupyter notebook and returns the result as Python code.
-    """
-    # Load the notebook file
-    notebook_path = os.path.join('notebooks', notebook_name)
+def run_notebook(notebook_path, parameters):
     with open(notebook_path) as f:
-        notebook = nbformat.read(f, as_version=4)
+        nb = nbformat.read(f, as_version=4)
     
-    # Set up the notebook client
-    client = NotebookClient(notebook, timeout=600, resources={'parameters': params})
+    ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
     
-    # Execute the notebook
-    client.execute()
+    # Inject parameters into the notebook
+    dataset_path = parameters['dataset_path'].replace('\\', '/')
+    if 'target_column' in parameters:
+        target_column = parameters['target_column']
+        nb.cells.insert(0, nbformat.v4.new_code_cell(f"dataset_path = r'{dataset_path}'\ntarget_column = '{target_column}'"))
+    else:
+        nb.cells.insert(0, nbformat.v4.new_code_cell(f"dataset_path = r'{dataset_path}'"))
     
-    # Export the results to Python code (or any other desired format)
-    exporter = PythonExporter()
-    body, _ = exporter.from_notebook_node(notebook)
-    return body
+    try:
+        ep.preprocess(nb, {'metadata': {'path': './'}})
+    except Exception as e:
+        return str(e)
+    
+    # Extract and return the output
+    output = nb.cells[-1].get('outputs', [])
+    if output:
+        return output[0].get('text', 'No output')
+    return 'No output'
