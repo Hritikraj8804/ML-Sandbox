@@ -63,7 +63,7 @@
    python app.py
    ```
 
-5. Open the frontend in your browser by navigating to the specified URL (usually `http://localhost:5000`).
+5. Open the frontend in your browser by navigating to the specified URL.
 
 ### Usage
 
