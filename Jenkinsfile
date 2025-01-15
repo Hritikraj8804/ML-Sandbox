@@ -12,8 +12,7 @@ pipeline {
             steps {
                 // Commands for building your model (e.g., Python commands)
                 bat 'echo Building on Windows...'
-                bat 'cd backend'
-                bat 'python app.py' 
+                bat 'cd backend && python app.py'
             }
         }
 
