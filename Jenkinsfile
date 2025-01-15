@@ -11,8 +11,9 @@ pipeline {
         stage('Build') {
             steps {
                 // Commands for building your model (e.g., Python commands)
-                sh 'cd backend'
-                sh 'python app.py' 
+                bat 'echo Building on Windows...'
+                bat 'cd backend'
+                bat 'python app.py' 
             }
         }
 
