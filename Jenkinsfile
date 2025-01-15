@@ -6,9 +6,10 @@ pipeline {
             steps {
                 script {
                     // Clean the workspace
-                    sh '''
+                    sh """
                         echo "Clean the workspace"
-                    '''
+                    """
+                }
             }
         }
 
@@ -16,9 +17,9 @@ pipeline {
             steps {
                 script {
                     // Activate the virtual environment and install dependencies
-                    sh '''
+                    sh """
                         echo "Activate the virtual environment and install dependencies"
-                    '''
+                    """
                 }
             }
         }
@@ -27,12 +28,11 @@ pipeline {
             steps {
                 script {
                     // Activate the virtual environment and run tests
-                    sh '''
+                    sh """
                         echo "Activate the virtual environment and run tests"
-                    '''
+                    """
                 }
             }
         }
     }
-
 }
