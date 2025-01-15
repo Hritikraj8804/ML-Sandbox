@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Commands for building your model (e.g., Python commands)
-                cd backend
+                sh 'cd backend'
                 sh 'python app.py' 
             }
         }
