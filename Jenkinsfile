@@ -1,38 +1,20 @@
 pipeline {
-    agent any
+    agent any 
 
     stages {
-        stage('Setup') {
+        stage('Checkout') {
             steps {
-                script {
-                    // Clean the workspace
-                    sh """
-                        echo "Clean the workspace"
-                    """
-                }
+                git branch: 'ui1', url: 'https://github.com/Hritikraj8804/ML-Sandbox.git' 
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build') {
             steps {
-                script {
-                    // Activate the virtual environment and install dependencies
-                    sh """
-                        echo "Activate the virtual environment and install dependencies"
-                    """
-                }
+                // Commands for building your model (e.g., Python commands)
+                cd backend
+                sh 'python app.py' 
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-                    // Activate the virtual environment and run tests
-                    sh """
-                        echo "Activate the virtual environment and run tests"
-                    """
-                }
-            }
-        }
     }
 }
