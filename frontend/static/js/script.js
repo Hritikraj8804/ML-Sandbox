@@ -18,6 +18,10 @@ function toggleTheme() {
             iframeDocument.body.classList.toggle('dark-mode', theme === 'dark');
         }
     }
+
+    // Update the slider position based on the theme
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.checked = theme === 'dark';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
