@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Body */
 body {
     font-family: Arial, sans-serif;
@@ -14,12 +18,76 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+.page-container {
+    display: flex;
+    height: 100vh;
+}
+
+.page01 {
+    flex: 0 0 250px; /* Fixed width for the sidebar */
+    background-color: #f4f4f4; /* Adjust as needed */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbar */
+}
+
+.page02 {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh;
+}
+
 /* Container for layout */
 .container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
 }
+
+.asid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding-top: 2.25rem;
+    padding-bottom: 2.5rem;;
+    padding-right: 0.75rem;
+    background-color: #F3F3F3;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-color: #F3F3F3;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu_sel_1 {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #F2FED1;
+    box-shadow: #191A23;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-width: 1px 1px 1px;
+    border-style: solid solid solid;
+    border-color: black;    
+    border-left: 0;
+    color: #000000;
+    font-size: 1.5rem;
+    font-family: cursive;
+    padding: 0.5rem;
+}
+.lgt {
+    margin-top: 3rem;
+}
+
 
 
 /* Header */
@@ -149,6 +217,17 @@ footer p {
 .dark-mode {
     background-color: #333;
     color: #f4f4f4;
+}
+
+.dark-mode .asid {
+    background-color: #272727;
+    border-color: #272727;
+}
+
+.dark-mode .menu_sel_1 {
+    background-color: black;
+    color: white;
+    box-shadow: #191A23;
 }
 
 .dark-mode header {
