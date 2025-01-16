@@ -9,14 +9,32 @@ function toggleTheme() {
     body.classList.toggle('dark-mode');
     const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
+
+    // Apply the theme to the iframe content
+    const iframe = document.getElementById('resultFrame');
+    if (iframe) {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        if (iframeDocument) {
+            iframeDocument.body.classList.toggle('dark-mode', theme === 'dark');
+        }
+    }
 }
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
         document.body.classList.add('dark-mode');
     }
-}
+
+    // Apply the theme to the iframe content on page load
+    const iframe = document.getElementById('resultFrame');
+    if (iframe) {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        if (iframeDocument) {
+            iframeDocument.body.classList.toggle('dark-mode', theme === 'dark');
+        }
+    }
+});
 
 function resetPage() {
     document.getElementById('resultFrame').style.display = 'none';
