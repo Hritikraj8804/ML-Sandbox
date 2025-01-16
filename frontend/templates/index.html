@@ -42,7 +42,10 @@
         <div class="container">
             <h1>ML Sandbox: Run Your Algorithms</h1>
             <p>Upload your dataset and select an algorithm to process the data</p>
-            <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                <span class="slider round"></span>
+            </label>
         </div>
     </header>
 
