@@ -10,7 +10,34 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <div class="page-container">
+        <div class="page01">
+            <aside class="asid">
+                <div>
+                    <a href="/frontend/templates/index.html"><img src="{{ url_for('static', filename='images/images.png') }}"></a>
+                </div>
+                <div class="menu">
+                    <a href="/Dashboard">
+                        <div class="menu_sel_1"><p>Dashboard</p></div>                   
+                    </a>
+                    <a href="/Data">
+                        <div class="menu_sel_1"><p>Data</p></div>                   
+                    </a>
+                    <a href="/Github">
+                        <div class="menu_sel_1"><p>Github</p></div>                   
+                    </a>
+                    <a href="/Contact_Us">
+                        <div class="menu_sel_1"><p>Contact Us</p></div>                   
+                    </a>
+                </div>
+                <div class="lgt">
+                    <button type="button"> Logout</button>
+                </div>
+            </aside>
+        </div>
+
+        <div class="page02">
+            <!-- Header -->
     <header>
         <div class="container">
             <h1>ML Sandbox: Run Your Algorithms</h1>
@@ -51,6 +78,8 @@
             <p>&copy; 2024 ML Sandbox | All Rights Reserved</p>
         </div>
     </footer>
+        </div>
+    </div>
 </body>
 
 </html>
