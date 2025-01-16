@@ -8,9 +8,10 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 /* Container for layout */
@@ -20,13 +21,14 @@ body {
     padding: 20px;
 }
 
+
 /* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #f3f3f3;
+    color: rgb(0, 0, 0);
     padding: 20px 0;
     text-align: center;
-    border-bottom: #047208 3px solid;
+    border-bottom: #000000 3px solid;
 }
 
 header h1 {
@@ -39,11 +41,11 @@ header p {
 
 /* Main Content */
 main {
-    background-color: white;
+    background-color: #F2FED1;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.9);
+    margin: 20px;
 }
 
 main h2 {
@@ -61,18 +63,24 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="file"], 
-select, 
-button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+input[type="file"],
+button,
+select {
     border: 1px solid #ccc;
-    font-size: 1rem;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1em;
+    transition: border-color 0.7s, background-color 0.3s;
+}
+
+select:hover {
+    background-color: #ABF600;
+    border-bottom: 2px solid #005103;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.9);
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #42ab45;
     color: white;
     border: none;
     cursor: pointer;
@@ -80,7 +88,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #1c8207;
 }
 
 #resultFrame {
@@ -123,11 +131,12 @@ iframe {
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #f3f3f3;
+    color: rgb(177, 168, 168);
     padding: 20px 0;
     text-align: center;
     margin-top: 40px;
+    border-top: #000000 3px solid;
 }
 
 footer p {
@@ -135,26 +144,49 @@ footer p {
 }
 
 /* Dark Mode Styles */
+
+
 .dark-mode {
     background-color: #333;
     color: #f4f4f4;
 }
 
 .dark-mode header {
-    background: #444;
+    background: #222;
     border-bottom: #e8491d 3px solid;
 }
 
+.dark-mode header h1{
+    color: greenyellow;
+}
+
+.dark-mode header p{
+    color: greenyellow;
+}
+
+.dark-mode .algorithm-title {
+    color: greenyellow;
+}
+
+.algorithm-title {
+    color: black;
+}
+
 .dark-mode button {
-    background: #444;
+    background: #000000;
 }
 
 .dark-mode button:hover {
-    background: #e8491d;
+    background: #ABF600;
+}
+
+.dark-mode main {
+    background: #444;
 }
 
 .dark-mode footer {
     background: #222;
+    border-top: #e8491d 3px solid;
 }
 
 /* Responsive Design */
