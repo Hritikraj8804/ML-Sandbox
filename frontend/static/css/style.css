@@ -213,7 +213,7 @@ select {
 }
 
 select:hover {
-    background-color: #ABF600;
+    background-color: #FFD700;
     border-bottom: 2px solid #005103;
     box-shadow: 0 12px 12px rgba(0, 0, 0, 0.9);
 }
