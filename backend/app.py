@@ -8,6 +8,15 @@ app = Flask(__name__, template_folder="../frontend/templates", static_folder="..
 def index():
     return render_template('index.html')
 
+@app.route('/data')
+def data():
+    return render_template('Data.html')
+
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact_us.html')
+
+
 @app.route('/process', methods=['POST'])
 def process():
     try:
