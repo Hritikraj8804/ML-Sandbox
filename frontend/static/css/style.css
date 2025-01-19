@@ -59,9 +59,10 @@ body {
 }
 
 .menu {
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .menu_sel_1 {
@@ -92,6 +93,7 @@ body {
 .menu .active .menu_sel_1 {
     background-color: #FFD700; /* Change this color as needed */
     color: black; /* Adjust text color if needed */
+    box-shadow: 0 5px 0 0    #e8491d;
 }
 
 .lgt {
