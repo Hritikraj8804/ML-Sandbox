@@ -26,14 +26,14 @@ body {
 .page01 {
     flex: 0 0 250px; /* Fixed width for the sidebar */
     background-color: #f4f4f4; /* Adjust as needed */
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
     overflow: hidden; /* Prevent scrollbar */
 }
 
 .page02 {
     flex: 1;
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
     overflow-y: auto; /* Enable vertical scrolling */
     height: 100vh;
@@ -91,9 +91,13 @@ body {
 
 .lgt {
     margin-top: 3rem;
+    padding-left: 20px;
 }
 
-
+.logout-btn {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Adjust the padding as needed */
+}
 
 /* Header */
 header {
