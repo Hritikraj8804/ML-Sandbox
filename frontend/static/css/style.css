@@ -84,6 +84,11 @@ body {
     font-family: cursive;
     padding: 0.5rem;
 }
+
+.menu_sel_1:hover {
+    background-color: #ABF600; /* Change this color as needed */
+}
+
 .lgt {
     margin-top: 3rem;
 }
@@ -285,6 +290,11 @@ footer p {
     color: white;
     box-shadow: #191A23;
 }
+
+.dark-mode .menu_sel_1:hover {
+    background-color: #1adc00; /* Change this color as needed */
+}
+
 
 .dark-mode header {
     background: #222;
