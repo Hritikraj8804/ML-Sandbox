@@ -224,10 +224,11 @@ button {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 5px 5px 0 #0a9c00;
 }
 
 button:hover {
-    background-color: #1c8207;
+    background-color: #146b02;
 }
 
 #resultFrame {
