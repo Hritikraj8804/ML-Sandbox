@@ -66,6 +66,9 @@ body {
 }
 
 .menu_sel_1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -304,6 +307,11 @@ footer p {
 
 .dark-mode .menu_sel_1:hover {
     background-color: #1adc00; /* Change this color as needed */
+}
+
+.menu .active .menu_sel_1 {
+    background-color: #FFD700; /* Change this color as needed */
+    color: black; /* Adjust text color if needed */
 }
 
 
