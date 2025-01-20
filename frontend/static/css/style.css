@@ -171,7 +171,7 @@ header {
     border-radius: 50%;
   }
 
-.dashboard {
+.dashboardL {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -179,12 +179,28 @@ header {
 
 }
 
-.dashboard2 {
+.dashboardL2 {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 0.375rem;
     border-radius: 50px;
+}
+
+.dashboardR {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.dashboardR11 {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .h2li {
@@ -209,7 +225,7 @@ header {
     gap: 10px;
 }
 
-.usercnt1_1 {
+.usercnt11 {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -310,7 +326,7 @@ iframe {
 
 /* Footer */
 footer {
-    background-color: #f3f3f3;
+    background-color:rgba(0, 0, 0, 0.06);
     color: rgb(177, 168, 168);
     padding: 2px 0;
     text-align: center;
