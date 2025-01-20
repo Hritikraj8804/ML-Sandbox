@@ -4,26 +4,6 @@ function showResultFrame() {
     document.getElementById('resetButton').style.display = 'block';
 }
 
-// function toggleTheme() {
-//     const body = document.body;
-//     body.classList.toggle('dark-mode');
-//     const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-//     localStorage.setItem('theme', theme);
-
-//     // Apply the theme to the iframe content
-//     const iframe = document.getElementById('resultFrame');
-//     if (iframe) {
-//         const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-//         if (iframeDocument) {
-//             iframeDocument.body.classList.toggle('dark-mode', theme === 'dark');
-//         }
-//     }
-
-//     // Update the slider position based on the theme
-//     const themeToggle = document.getElementById('themeToggle');
-//     themeToggle.checked = theme === 'dark';
-// }
-
 function updateThemeIcon() {
     const themeIcon = document.getElementById('theme-icon');
     const isDarkMode = document.body.classList.contains('dark-mode');

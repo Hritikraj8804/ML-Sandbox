@@ -1,136 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Sandbox</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+{% block title %}ML Sandbox{% endblock %}
 
-<body>
-    <div class="page-container">
-        <div class="page01">
-            <aside class="asid">
-                <div>
-                    <a href=""><img src="{{ url_for('static', filename='images/images.png') }}"></a>
-                </div>
-                <div class="menu">
-                    <a href="/" class="{% if request.path == '/' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-solid fa-house"></i>
-                            <p>Dashboard</p>
-                        </div>                   
-                    </a>
-                    <a href="/data" class="{% if request.path == '/data' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-duotone fa-solid fa-book"></i>
-                            <p>Data</p>
-                        </div>                   
-                    </a>    
-                    <a href="https://github.com/Hritikraj8804/ML-Sandbox" target="_blank">
-                        <div class="menu_sel_1">
-                            <i class="fa-brands fa-github-alt"></i>
-                            <p>Github</p>
-                        </div>                   
-                    </a>
-                    <a href="/contact_us" class="{% if request.path == '/contact_us' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-solid fa-address-book"></i>
-                            <p>Contact Us</p>
-                        </div>                   
-                    </a>
-                </div>
-                <!-- <div class="lgt">
-                    <button type="button" class="logout-btn"> Logout</button>
-                </div> -->
-            </aside>
+{% block page %}Dashboard{% endblock %}
+
+{% block user_count %}
+<div class="usercnt">
+    <div class="usercnt1">
+        <div class="usercnt11">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <p>visit count: </p>
         </div>
-
-        <div class="page02">
-            <header>
-                <div class="dashboardL">
-                    <span class="dashboardL1">
-                        <div class="dashboardL2">
-                            <h2 class="h2li ">Dashboard</h2>
-                        </div>
-                    </span>
-                    <div class="usercnt">
-                        <div class="usercnt1">
-                            <div class="usercnt11">
-                                <i class="fa-solid fa-users-viewfinder"></i>
-                                <p>visit count: </p>
-                            </div>
-                            <div class="usercnt12">
-                                {{ visit_count }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dashboardR">
-                    <div class="dashboardR1">
-                        <div class="dashboardR11">
-                            <label class="switch">
-                                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
-                                <span class="slider round"></span>
-                            </label>
-                            <label id="theme-label">
-                                <i id="theme-icon" class="fa-solid"></i>
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Welcome -->
-             <main>
-                <div class="instr">
-                    Welcome to ML Sandbox! We're thrilled you're here. Explore our site and discover all we have to offer. We hope you'll find it helpful and engaging. Feel free to share it, star our GitHub repo, and even contribute to our project!
-                </div>
-             </main>
-
-            <!-- Main Content -->
-            <main>
-                <div class="container">
-                    <h2>Choose Algorithm and Dataset</h2>
-                    <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" target="resultFrame" onsubmit="showResultFrame()">
-                        <div class="form-group">
-                            <label for="dataset">Upload Dataset</label>
-                            <input type="file" name="dataset" id="dataset" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="algorithm">Choose Algorithm</label>
-                            <select name="algorithm" id="algorithm" required>
-                                <option value="classification">Classification</option>
-                                <option value="find_s">Find S</option>
-                                <option value="candidate_key">Candidate Key</option>
-                            </select>
-                        </div>
-                        
-                        <div class="btn">
-                            <div><button type="submit">Run Algorithm</button></div>
-                            <div class="rst"><button type="reset"><a href="/" onclick="resetPage(); return false;">Reset</a></button></div>
-                        </div>
-
-                        
-                    </form>
-                    <iframe src='results.html' id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe>
-                    
-                </div>
-            </main>
-
-            <!-- Footer -->
-            <footer class="footer">
-                <div class="container">
-                    <p>&copy; 2025 ML Sandbox | All Rights Reserved</p>
-                </div>
-            </footer>
+        <div class="usercnt12">
+            {{ visit_count }}
         </div>
     </div>
-</body>
-
-</html>
+</div>
+{% endblock %}
