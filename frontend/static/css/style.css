@@ -28,7 +28,7 @@ body {
     background-color: #f4f4f4; /* Adjust as needed */
     /* padding: 20px; */
     box-sizing: border-box;
-    overflow: hidden; /* Prevent scrollbar */
+    overflow: hidden;
 }
 
 .page02 {
@@ -56,6 +56,10 @@ body {
     border-left-style: solid;
     border-color: #F3F3F3;
     height: 100%;
+}
+
+.avtr {
+    padding: 15px 15px 0 15px;
 }
 
 .menu {

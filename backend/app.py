@@ -11,6 +11,9 @@ def index():
     visit_count += 1
     return render_template('index.html', visit_count=visit_count)
 
+@app.route('/algorithm')
+def algorithm():
+    return render_template('algorithm.html')
 
 @app.route('/data')
 def data():

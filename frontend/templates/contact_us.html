@@ -1,82 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Sandbox</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% block title %}Contact_Us - ML Sandbox{% endblock %}
 
-</head>
+{% block page %}Contact_Us{% endblock %}
 
-<body>
-    <div class="page-container">
-        <div class="page01">
-            <aside class="asid">
-                <div>
-                    <a href=""><img src="{{ url_for('static', filename='images/images.png') }}"></a>
-                </div>
-                <div class="menu">
-                    <a href="/" class="{% if request.path == '/' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-solid fa-house"></i>
-                            <p>Dashboard</p>
-                        </div>                   
-                    </a>
-                    <a href="/data" class="{% if request.path == '/data' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-duotone fa-solid fa-book"></i>
-                            <p>Data</p>
-                        </div>                   
-                    </a>    
-                    <a href="https://github.com/Hritikraj8804/ML-Sandbox" target="_blank">
-                        <div class="menu_sel_1">
-                            <i class="fa-brands fa-github-alt"></i>
-                            <p>Github</p>
-                        </div>                   
-                    </a>
-                    <a href="/contact_us" class="{% if request.path == '/contact_us' %}active{% endif %}">
-                        <div class="menu_sel_1">
-                            <i class="fa-solid fa-address-book"></i>
-                            <p>Contact Us</p>
-                        </div>                   
-                    </a>
-                </div>
-                <!-- <div class="lgt">
-                    <button type="button" class="logout-btn"> Logout</button>
-                </div> -->
-            </aside>
-        </div>
-
-        <div class="page02">
-            <!-- Header -->
-            <header>
-                <div class="dashboardL">
-                    <span class="dashboardL1">
-                        <div class="dashboardL2">
-                            <h2 class="h2li ">Contact Us</h2>
-                        </div>
-                    </span>
-                    
-                </div>
-                <div class="dashboardR">
-                    <div class="dashboardR1">
-                        <div class="dashboardR11">
-                            <label class="switch">
-                                <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
-                                <span class="slider round"></span>
-                            </label>
-                            <label id="theme-label">
-                                <i id="theme-icon" class="fa-solid"></i>
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-
+{% block content %}
     <!-- Main Content -->
     <main>
         <div class="container">
@@ -84,15 +12,4 @@
             
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 ML Sandbox | All Rights Reserved</p>
-        </div>
-    </footer>
-        </div>
-    </div>
-</body>
-
-</html>
+{% endblock %}
