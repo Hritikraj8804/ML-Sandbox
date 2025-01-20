@@ -90,7 +90,7 @@ body {
     color: #000000;
     font-size: 1.5rem;
     font-family: cursive;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
 }
 
 .menu_sel_1:hover {
