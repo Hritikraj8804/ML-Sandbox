@@ -370,19 +370,29 @@ footer p {
     color: black; /* Adjust text color if needed */
 }
 
-
 /* .dark-mode header {
     background: #222;
     border-bottom: #e8491d 3px solid;
 }
+*/
 
-.dark-mode header h1{
-    color: greenyellow;
+.dark-mode .h2li {
+    background-color: #e8491d;
 }
 
-.dark-mode header p{
-    color: greenyellow;
-} */
+.dark-mode .usercnt {
+    background-color: #404040;
+    box-shadow: 0px 5px 0px 0px #000000;
+    border: 1px solid #404040;
+}
+
+.dark-mode .usercnt11 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #404040;
+    border-radius: 7px ;
+}
 
 .dark-mode .algorithm-title {
     color: greenyellow;
