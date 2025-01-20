@@ -70,17 +70,22 @@
                             <h2 class="h2li ">Dashboard</h2>
                         </div>
                     </span>
-                    <div class="usercnt1">
-                        <div class="usercnt">
-                            <i class="fa-solid fa-users-viewfinder"></i>
-                            <p>user count:</p>
+                    <div class="usercnt">
+                        <div class="usercnt1">
+                            <div class="usercnt1_1">
+                                <i class="fa-solid fa-users-viewfinder"></i>
+                                <p>user count: </p>
+                            </div>
+                            <div class="usercnt2">
+                                {{ visit_count }}
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div>
                         <label class="switch">
-                            <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                            <input type="checkbox" id="themeToggle" onchange="toggleTheme()">Light theme
                             <span class="slider round"></span>
                         </label>
                     </div>
