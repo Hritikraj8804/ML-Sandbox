@@ -3,10 +3,14 @@ import os
 from utils.algorithms import run_algorithm
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
+visit_count = 0
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    global visit_count
+    visit_count += 1
+    return render_template('index.html', visit_count=visit_count)
+
 
 @app.route('/data')
 def data():
