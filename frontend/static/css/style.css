@@ -348,6 +348,21 @@ footer p {
     font-size: 1rem;
 }
 
+/* icons */
+/* Increase size of all icons */
+.fa-solid {
+    font-size: 24px; /* Adjust the size as needed */
+}
+
+/* Specific icon size adjustments */
+.usercnt11 .fa-users-viewfinder {
+    font-size: 30px; /* Adjust the size as needed */
+}
+
+#theme-icon {
+    font-size: 24px; /* Adjust the size as needed */
+}
+
 /* Dark Mode Styles */
 
 
