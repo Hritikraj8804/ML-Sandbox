@@ -111,20 +111,13 @@ body {
 
 /* Header */
 header {
-    background-color: #f3f3f3;
-    color: rgb(0, 0, 0);
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: #000000 3px solid;
+    padding: 15px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
-header h1 {
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.1rem;
-}
 
 .switch {
     position: relative;
@@ -177,6 +170,42 @@ header p {
   .slider.round:before {
     border-radius: 50%;
   }
+
+.dashboard {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-direction: column;
+
+}
+
+.dashboard2 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.375rem;
+    border-radius: 50px;
+}
+
+.h2li {
+    line-height: 1.2;
+    padding: 0 2px 0 2px;
+    background-color: #F2FED1;
+    border-radius: 7px;
+}
+
+.usercnt1 {
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    display: flex;
+}
+
+.usercnt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F2FED1;
+}
 
 /* Main Content */
 main {
@@ -316,7 +345,7 @@ footer p {
 }
 
 
-.dark-mode header {
+/* .dark-mode header {
     background: #222;
     border-bottom: #e8491d 3px solid;
 }
@@ -327,7 +356,7 @@ footer p {
 
 .dark-mode header p{
     color: greenyellow;
-}
+} */
 
 .dark-mode .algorithm-title {
     color: greenyellow;
