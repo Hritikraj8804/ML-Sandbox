@@ -283,6 +283,12 @@ select:hover {
     box-shadow: 0 12px 12px rgba(0, 0, 0, 0.9);
 }
 
+.btn{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 button {
     background-color: #42ab45;
     color: white;
@@ -290,6 +296,10 @@ button {
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 5px 5px 0 #0a9c00;
+}
+
+.rst a {
+    color: white;
 }
 
 button:hover {
@@ -329,10 +339,6 @@ iframe {
     border: none;
     display: none;
     margin-top: 20px;
-}
-.reset-button {
-    margin-top: 20px;
-    display: none;
 }
 
 /* Footer */
