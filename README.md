@@ -78,6 +78,7 @@
 ml-sandbox/
 ├── frontend/                     # Frontend files
 │   ├── templates/                # HTML files
+│   │   ├── algorithm.html        # Algorithm HTML file
 │   │   ├── base.html             # Base Template HTML file
 │   │   ├── contact_us.html       # Contact HTML file
 │   │   ├── data.html             # INFO HTML file
