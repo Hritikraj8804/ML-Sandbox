@@ -78,6 +78,7 @@
 ml-sandbox/
 ├── frontend/                     # Frontend files
 │   ├── templates/                # HTML files
+│   │   ├── base.html             # Base Template HTML file
 │   │   ├── contact_us.html       # Contact HTML file
 │   │   ├── data.html             # INFO HTML file
 │   │   ├── index.html            # Main HTML file
