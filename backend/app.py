@@ -5,6 +5,9 @@ from utils.algorithms import run_algorithm
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 visit_count = 0
 
+data_temp_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/temp'))
+os.makedirs(data_temp_dir, exist_ok=True)
+
 @app.route('/')
 def index():
     global visit_count
@@ -35,7 +38,7 @@ def process():
         os.makedirs(data_dir, exist_ok=True)
 
         # Save dataset temporarily
-        dataset_path = os.path.join(data_dir, dataset.filename)
+        dataset_path = os.path.join(data_temp_dir, dataset.filename)
         dataset.save(dataset_path)
 
         # Print statements for testing
