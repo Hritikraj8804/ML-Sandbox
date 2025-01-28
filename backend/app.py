@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify, session
 import os
+import markdown
 from utils.algorithms import run_algorithm
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
@@ -36,6 +37,14 @@ def contact_us():
 @app.route('/download/<filename>')
 def download_file(filename):
     return send_from_directory(sample_datasets_dir, filename, as_attachment=True)
+
+@app.route('/docs')
+def docs():
+    md_file_path = os.path.join(os.path.dirname(__file__), '../docs/docs.md')
+    with open(md_file_path, 'r') as md_file:
+        md_content = md_file.read()
+        html_content = markdown.markdown(md_content)
+    return render_template('docs.html', content=html_content)
 
 @app.route('/process', methods=['POST'])
 def process():
