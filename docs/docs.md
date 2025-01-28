@@ -1,4 +1,4 @@
-# How to Use ML Sandbox
+# How to Use ML Sandbox<hr>
 
 ## Step 1: Upload Dataset
 1. Go to the "Algorithm" page.
