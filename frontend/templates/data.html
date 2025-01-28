@@ -5,10 +5,15 @@
 {% block page %}Data{% endblock %}
 
 {% block content %}
-    <main>
-        <div class="container">
-            <h2>Choose Dataset</h2>
-            
-        </div>
-    </main>
+<main>
+    <div class="container">
+        <h2>Dataset</h2>
+        <ul>
+            {% for dataset in datasets %}
+                {% set dataset_name = dataset.rsplit('.', 1)[0] %}
+                <li><a href="{{ url_for('download_file', filename=dataset) }}">{{ dataset_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
 {% endblock %}
