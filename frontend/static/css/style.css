@@ -184,6 +184,25 @@ header {
     flex-direction: column;
 }
 
+.indpage {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    border-radius: 50px;
+}
+
+.indpage1 {
+    font-size: var(--font-size-headline, clamp(3.5rem, 8vw, 5.5rem));
+    line-height: var(--font-size-headline--line-height, clamp(3.5rem, 8.5vw, 5.75rem));
+    letter-spacing: var(--font-size-headline--letter-spacing, var(--letter-spacing-compressed));
+}
+
+.indpage2 {
+    font-size: var(--font-size-description, clamp(1.125rem, 3vw, 1.25rem));
+    line-height: var(--font-size-description--line-height, clamp(1.625rem, 3.5vw, 1.75rem));
+    letter-spacing: var(--font-size-description--letter-spacing, var(--letter-spacing-tighter));
+}
+
 /* Styles for screens wider than 62em */
 @media screen and (min-width: 62em) {
     .dashboardL {
