@@ -1,0 +1,6 @@
+AGE,INCOME,CREDIT_SCORE,PRICE,COLOR,PURCHASE
+Young,High,Good,Expensive,Red,Yes
+Middle-aged,Medium,Fair,Moderate,Blue,Yes
+Senior,Low,Poor,Cheap,Black,No
+Young,Medium,Good,Moderate,Red,Yes
+Senior,High,Fair,Expensive,Blue,No

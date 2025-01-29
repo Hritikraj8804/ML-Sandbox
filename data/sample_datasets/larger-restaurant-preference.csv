@@ -1,0 +1,11 @@
+TIME,DAY,TYPE,PRICE,WEATHER,GROUP_SIZE,ENJOY
+Evening,Weekday,Italian,Expensive,Sunny,Small,Yes
+Morning,Weekend,Cafe,Cheap,Rainy,Large,No
+Afternoon,Weekday,Chinese,Moderate,Cloudy,Medium,Yes
+Evening,Weekend,Indian,Expensive,Sunny,Small,Yes
+Morning,Weekday,Italian,Cheap,Rainy,Large,No
+Night,Weekend,Japanese,Moderate,Cloudy,Small,Yes
+Afternoon,Weekday,Mexican,Expensive,Sunny,Medium,Yes
+Evening,Weekend,American,Cheap,Rainy,Large,No
+Morning,Weekday,Thai,Moderate,Cloudy,Small,Yes
+Night,Weekend,French,Expensive,Sunny,Medium,Yes

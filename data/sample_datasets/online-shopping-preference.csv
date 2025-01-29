@@ -1,0 +1,6 @@
+TIME,DEVICE,CATEGORY,PRICE,DISCOUNT,PURCHASE
+Morning,Mobile,Electronics,High,Yes,Yes
+Evening,Desktop,Clothing,Low,No,No
+Afternoon,Tablet,Books,Moderate,Yes,Yes
+Night,Mobile,Home,High,No,No
+Morning,Desktop,Electronics,Moderate,Yes,Yes

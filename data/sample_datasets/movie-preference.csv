@@ -1,0 +1,6 @@
+GENRE,DURATION,RATING,PRICE,DAY,ENJOY
+Action,Long,High,Expensive,Weekend,Yes
+Comedy,Short,Medium,Cheap,Weekday,Yes
+Horror,Medium,Low,Moderate,Weekend,No
+Drama,Long,High,Expensive,Weekday,Yes
+Comedy,Short,Low,Cheap,Weekend,No

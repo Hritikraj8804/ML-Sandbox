@@ -1,0 +1,13 @@
+AGE,INCOME,CREDIT_SCORE,PRICE,COLOR,FUEL_TYPE,PURCHASE
+Young,High,Good,Expensive,Red,Petrol,Yes
+Middle-aged,Medium,Fair,Moderate,Blue,Diesel,Yes
+Senior,Low,Poor,Cheap,Black,Electric,No
+Young,Medium,Good,Moderate,Red,Petrol,Yes
+Senior,High,Fair,Expensive,Blue,Diesel,No
+Middle-aged,Low,Poor,Cheap,Black,Electric,No
+Young,High,Good,Expensive,Blue,Petrol,Yes
+Middle-aged,Medium,Fair,Moderate,Red,Diesel,Yes
+Senior,Low,Poor,Cheap,Black,Electric,No
+Young,Medium,Good,Moderate,Blue,Petrol,Yes
+Senior,High,Fair,Expensive,Red,Diesel,No
+Middle-aged,Low,Poor,Cheap,Black,Electric,No
