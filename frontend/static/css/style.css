@@ -7,6 +7,7 @@
 
 a{
     text-decoration: none;
+    color: #3498db;
 }
 
 /* Body */
@@ -456,7 +457,7 @@ footer p {
 }
 
 .dark-mode button:hover {
-    background: #ABF600;
+    background: #146b02;
 }
 
 .dark-mode main {
@@ -552,4 +553,20 @@ form {
 
 .developer a:hover {
     text-decoration: underline;
+}
+
+
+/* Contact form dark-mode styles */
+.dark-mode form,
+.dark-mode .developer {
+    background-color: #444;
+    box-shadow: 0 0 10px #e8491d;
+}
+
+.dark-mode .form-group button {
+    background-color: #000000;
+}
+
+.dark-mode .form-group button:hover {
+    background-color: #146b02;
 }
