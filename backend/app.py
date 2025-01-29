@@ -78,6 +78,19 @@ def process():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/submit_contact', methods=['POST'])
+def submit_contact():
+    name = request.form['name']
+    email = request.form['email']
+    subject = request.form['subject']
+    message = request.form['message']
+
+    # Here you can handle the form data, e.g., save it to a database or send an email
+    print(f"Received contact form submission: {name}, {email}, {subject}, {message}")
+
+    # Redirect to a thank you page or back to the contact form
+    return redirect(url_for('contact_us'))
 
 if __name__ == '__main__':
     app.run(debug=True)
