@@ -63,7 +63,7 @@ body {
 }
 
 .menu {
-    padding-top: 1rem;
+    padding-top: 0.2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

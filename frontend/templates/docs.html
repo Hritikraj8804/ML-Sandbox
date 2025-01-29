@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}How to Use - ML Sandbox{% endblock %}
+
+{% block page %}How to Use{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="markdown-content">
+            {{ content|safe }}
+        </div>
+    </div>
+</main>
+{% endblock %}
