@@ -1,4 +1,12 @@
-# How to Use ML Sandbox<hr><hr><br>
+# ML SandBox Documentation<hr><hr><br>
+
+## Table of Contents<hr>
+- Cloning and Project Setup
+- How to Use ML Sandbox - Algorithm
+- How to Use ML Sandbox - Data
+- Contribution
+
+<br>
 
 ## Cloning and Project Setup<hr>
 
@@ -45,6 +53,15 @@ cd backend
 python app.py
 `
 <br><br><br>
+
+## How to Use ML Sandbox - Data<hr>
+### Step 1: Download Dataset
+Go to the "Data" page. Click on the dataset you want to download. The dataset will be downloaded to your local machine.
+
+### Step 2: Use the Dataset
+Use the downloaded dataset for your analysis or machine learning tasks.
+
+<br><br><br>
 ## How to Use ML Sandbox-Algorithm<hr>
 
 ### Step 1: Upload Dataset
@@ -58,3 +75,44 @@ python app.py
  Click the "Run Algorithm" button.
  View the results on the results page.
 
+<br><br><br>
+
+## Contribution<hr>
+We welcome contributions to ML Sandbox! If you have any ideas, suggestions, or bug reports, please feel free to open an issue or submit a pull request on GitHub.
+
+<br>
+
+### How to Contribute
+Fork the repository on GitHub.<br>
+Clone your forked repository:<br>
+`
+ git clone https://github.com/Hritikraj8804/ML-Sandbox.git
+`<br>
+Create a new branch for your feature or bug fix:<br>
+`
+ git checkout -b feature-name
+`<br>
+Make your changes and commit them:<br>
+`
+ git add .
+`<br>
+`
+ git commit -m "Description of your changes"
+`<br>
+Push your changes to your forked repository:<br>
+`
+ git push origin feature-name
+`<br>
+Open a pull request on the original repository.
+
+<br>
+
+### Star the Repository
+If you find this project useful, please consider starring the repository on GitHub. It helps us to grow and reach more people.
+
+<br>
+
+### Share
+Feel free to share this project with your friends and colleagues. The more people use and contribute to ML Sandbox, the better it will become!
+
+Thank you for your support!
