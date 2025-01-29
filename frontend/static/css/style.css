@@ -7,6 +7,7 @@
 
 a{
     text-decoration: none;
+    color: #3498db;
 }
 
 /* Body */
@@ -456,7 +457,7 @@ footer p {
 }
 
 .dark-mode button:hover {
-    background: #ABF600;
+    background: #146b02;
 }
 
 .dark-mode main {
@@ -475,4 +476,97 @@ footer p {
     .container {
         width: 90%;
     }
+}
+
+
+/* Contact form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #42ab45;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #146b02;
+}
+
+/* Developer details styles */
+.developer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.developer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.developer h3 {
+    margin-top: 0;
+}
+
+.developer p {
+    margin: 5px 0;
+}
+
+.developer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.developer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Contact form dark-mode styles */
+.dark-mode form,
+.dark-mode .developer {
+    background-color: #444;
+    box-shadow: 0 0 10px #e8491d;
+}
+
+.dark-mode .form-group button {
+    background-color: #000000;
+}
+
+.dark-mode .form-group button:hover {
+    background-color: #146b02;
 }
