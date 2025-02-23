@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify, session
 import os
 import markdown
+import joblib
+import numpy as np
+import subprocess
 from utils.algorithms import run_algorithm
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
@@ -12,6 +15,9 @@ os.makedirs(data_temp_dir, exist_ok=True)
 
 sample_datasets_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/sample_datasets'))
 os.makedirs(sample_datasets_dir, exist_ok=True)
+
+# Path to the trained model
+model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../backend/model/placement_model.pkl'))
 
 @app.route('/')
 def index():
@@ -53,6 +59,35 @@ def docs():
 @app.route('/process', methods=['POST'])
 def process():
     try:
+        # Run the resume.py script
+        script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../notebooks/resume.py'))
+        result = subprocess.run(['python', script_path], capture_output=True, text=True)
+
+        # Check if the script ran successfully
+        if result.returncode != 0:
+            return jsonify({'error': result.stderr}), 500
+
+        # Load the trained model
+        model = joblib.load(model_path)
+
+        # Check if the request contains form data for prediction
+        if 'gpa' in request.form:
+            gpa = float(request.form['gpa'])
+            internships = int(request.form['internship'])
+            technical_skills = len(request.form.getlist('technical[]'))
+            communication = int(request.form['communication'])
+            projects = int(request.form['project'])
+
+            # Create input array for prediction
+            input_data = np.array([[gpa, internships, technical_skills, communication, projects]])
+
+            # Make prediction
+            prediction = model.predict(input_data)
+            result = 'Yes' if prediction[0] == 1 else 'No'
+
+            return render_template('resresult.html', result=result)
+
+        # Existing code for handling dataset and algorithm
         dataset = request.files['dataset']
         algorithm = request.form['algorithm']
 
