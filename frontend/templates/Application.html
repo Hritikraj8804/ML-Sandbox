@@ -14,32 +14,17 @@
 
 {% block content %} 
 <!-- Main Content -->
- <main>
+<main>
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#resume" role="tab" aria-controls="nav-home" aria-selected="true">placement Pred</a>
-            <!-- <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Results</a> -->
         </div>
     </nav>
- </main>
+</main>
 <main>
     <div class="container" id="resume">
         <h2>Predict Job Placement</h2>
-        <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" target="resultFrame" onsubmit="showResultFrame()">
-            <!-- <div class="form-group">
-                <label for="dataset">Upload Dataset</label>
-                <input type="file" name="dataset" id="dataset" required>
-            </div> -->
-
-            <!-- <div class="form-group">
-                <label for="algorithm">Predict Job Placement</label>
-                <select name="algorithm" id="algorithm" required>
-                    <option value="classification">Classification</option>
-                    <option value="find_s">Find S</option>
-                    <option value="candidate_key">Candidate Key</option>
-                </select>
-            </div> -->
-
+        <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" onsubmit="return submitForm(event)">
             <div class="form-group">
                 <label for="gpa">GPA/Academic Scores</label>
                 <input type="number" name="gpa" id="gpa" min="0" max="10" step="0.1" required><br><br>
@@ -95,19 +80,42 @@
                 <br><br>
                 <label for="project">No. of Project</label>
                 <input type="number" name="project" id="project" required>
-
             </div>
             
             <div class="btn">
                 <div><button type="submit">Predict</button></div>
                 <div><button type="reset">Reset</button></div>
-                <!-- <div class="rst"><button type="reset"><a href="/application" onclick="resetPage(); return false;">Reset</a></button></div> -->
             </div>
-
-            
         </form>
-        <!-- <iframe src='results.html' id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe> -->
-        
+        <div id="result"></div>
     </div>
 </main>
 {% endblock %}
+
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    const form = document.getElementById('algorithmForm');
+    const formData = new FormData(form);
+
+    fetch('/process', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        const resultDiv = document.getElementById('result');
+        if (data.error) {
+            resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+        } else {
+            resultDiv.innerHTML = `<p>Prediction: ${data.result}</p>`;
+        }
+    })
+    .catch(error => {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+    });
+
+    return false;
+}
+</script>
