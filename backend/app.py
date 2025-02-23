@@ -23,6 +23,10 @@ def index():
 def algorithm():
     return render_template('algorithm.html')
 
+@app.route('/application')
+def application():
+    return render_template('application.html')
+
 @app.route('/data')
 def data():
     datasets = []

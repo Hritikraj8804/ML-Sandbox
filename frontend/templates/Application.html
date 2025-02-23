@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Application {% endblock %}
+
+{% block page %}Application{% endblock %}
+
+{% block message %}
+    <!-- Welcome -->
+    <main>
+        <div class="instr">
+            Currently, ML_SandBox supports a selection of Application. We are actively working on expanding our Application library to include a wider range of options. Stay tuned for updates as we continue to enhance the project's capabilities.</div>
+    </main>
+{% endblock %}
+
+{% block content %} 
+<!-- Main Content -->
+<main>
+    <div class="container">
+        <h2>Choose Algorithm and Dataset</h2>
+        <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" target="resultFrame" onsubmit="showResultFrame()">
+            <div class="form-group">
+                <label for="dataset">Upload Dataset</label>
+                <input type="file" name="dataset" id="dataset" required>
+            </div>
+
+            <div class="form-group">
+                <label for="algorithm">Choose Algorithm</label>
+                <select name="algorithm" id="algorithm" required>
+                    <option value="classification">Classification</option>
+                    <option value="find_s">Find S</option>
+                    <option value="candidate_key">Candidate Key</option>
+                </select>
+            </div>
+            
+            <div class="btn">
+                <div><button type="submit">Run Algorithm</button></div>
+                <div class="rst"><button type="reset"><a href="/algorithm" onclick="resetPage(); return false;">Reset</a></button></div>
+            </div>
+
+            
+        </form>
+        <iframe src='results.html' id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe>
+        
+    </div>
+</main>
+{% endblock %}
