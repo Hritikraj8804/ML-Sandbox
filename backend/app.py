@@ -16,9 +16,8 @@ os.makedirs(data_temp_dir, exist_ok=True)
 sample_datasets_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/sample_datasets'))
 os.makedirs(sample_datasets_dir, exist_ok=True)
 
-# Load the trained model
+# Path to the trained model
 model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../backend/model/placement_model.pkl'))
-
 
 @app.route('/')
 def index():
@@ -60,8 +59,7 @@ def docs():
 @app.route('/process', methods=['POST'])
 def process():
     try:
-
-          # Run the resume.py script
+        # Run the resume.py script
         script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../notebooks/resume.py'))
         result = subprocess.run(['python', script_path], capture_output=True, text=True)
 
@@ -89,7 +87,7 @@ def process():
 
             return jsonify({'result': result})
 
-
+        # Existing code for handling dataset and algorithm
         dataset = request.files['dataset']
         algorithm = request.form['algorithm']
 

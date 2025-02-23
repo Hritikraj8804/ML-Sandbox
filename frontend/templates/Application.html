@@ -84,7 +84,7 @@
             
             <div class="btn">
                 <div><button type="submit">Predict</button></div>
-                <div><button type="reset">Reset</button></div>
+                <div><button type="reset" onclick="resetPage()">Reset</button></div>
             </div>
         </form>
         <div id="result"></div>
@@ -117,5 +117,9 @@ function submitForm(event) {
     });
 
     return false;
+}
+
+function resetPage() {
+    document.getElementById('result').innerHTML = '';
 }
 </script>
