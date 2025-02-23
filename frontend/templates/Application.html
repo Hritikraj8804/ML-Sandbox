@@ -14,32 +14,98 @@
 
 {% block content %} 
 <!-- Main Content -->
+ <main>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#resume" role="tab" aria-controls="nav-home" aria-selected="true">placement Pred</a>
+            <!-- <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Results</a> -->
+        </div>
+    </nav>
+ </main>
 <main>
-    <div class="container">
-        <h2>Choose Algorithm and Dataset</h2>
+    <div class="container" id="resume">
+        <h2>Predict Job Placement</h2>
         <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" target="resultFrame" onsubmit="showResultFrame()">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="dataset">Upload Dataset</label>
                 <input type="file" name="dataset" id="dataset" required>
-            </div>
+            </div> -->
 
-            <div class="form-group">
-                <label for="algorithm">Choose Algorithm</label>
+            <!-- <div class="form-group">
+                <label for="algorithm">Predict Job Placement</label>
                 <select name="algorithm" id="algorithm" required>
                     <option value="classification">Classification</option>
                     <option value="find_s">Find S</option>
                     <option value="candidate_key">Candidate Key</option>
                 </select>
+            </div> -->
+
+            <div class="form-group">
+                <label for="gpa">GPA/Academic Scores</label>
+                <input type="number" name="gpa" id="gpa" min="0" max="10" step="0.1" required><br><br>
+                <label for="internship">No. of Internship</label>
+                <input type="number" name="internship" id="internship" required><br><br>
+                <label>Technical Skills (Select all that apply):</label>
+
+                <div class="checkbox-container">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="c++" value="c++">
+                        <label for="c++">C++</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="java" value="java">
+                        <label for="java">Java</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="python" value="python">
+                        <label for="python">Python</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="c" value="c">
+                        <label for="c">C</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="html" value="html">
+                        <label for="html">HTML</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="css" value="css">
+                        <label for="css">CSS</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="javascript" value="javascript">
+                        <label for="javascript">JavaScript</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="php" value="php">
+                        <label for="php">PHP</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="technical[]" id="sql" value="sql">
+                        <label for="sql">SQL</label>
+                    </div>
+                </div>
+                <br><br>
+                <label for="communication">Communication Skills</label>
+                <select name="communication" id="communication" required>
+                    <option value="0">Limited</option>
+                    <option value="1">Adequate</option>
+                    <option value="2">Strong</option>
+                </select>
+                <br><br>
+                <label for="project">No. of Project</label>
+                <input type="number" name="project" id="project" required>
+
             </div>
             
             <div class="btn">
-                <div><button type="submit">Run Algorithm</button></div>
+                <div><button type="submit">Predict</button></div>
                 <div class="rst"><button type="reset"><a href="/algorithm" onclick="resetPage(); return false;">Reset</a></button></div>
             </div>
 
             
         </form>
-        <iframe src='results.html' id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe>
+        <!-- <iframe src='results.html' id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe> -->
         
     </div>
 </main>
