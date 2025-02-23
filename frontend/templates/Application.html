@@ -24,7 +24,7 @@
 <main>
     <div class="container" id="resume">
         <h2>Predict Job Placement</h2>
-        <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" onsubmit="return submitForm(event)">
+        <form id="algorithmForm" action="/process" method="POST" enctype="multipart/form-data" target="resultFrame" onsubmit="showResultFrame()">
             <div class="form-group">
                 <label for="gpa">GPA/Academic Scores</label>
                 <input type="number" name="gpa" id="gpa" min="0" max="10" step="0.1" required><br><br>
@@ -87,39 +87,22 @@
                 <div><button type="reset" onclick="resetPage()">Reset</button></div>
             </div>
         </form>
-        <div id="result"></div>
+        <iframe class="resresult" id="resultFrame" name="resultFrame" onload="adjustIframeHeight()"></iframe>
     </div>
 </main>
 {% endblock %}
 
 <script>
-function submitForm(event) {
-    event.preventDefault();
-    const form = document.getElementById('algorithmForm');
-    const formData = new FormData(form);
+function showResultFrame() {
+    document.getElementById('resultFrame').style.display = 'block';
+}
 
-    fetch('/process', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        const resultDiv = document.getElementById('result');
-        if (data.error) {
-            resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
-        } else {
-            resultDiv.innerHTML = `<p>Prediction: ${data.result}</p>`;
-        }
-    })
-    .catch(error => {
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;
-    });
-
-    return false;
+function adjustIframeHeight() {
+    const resultFrame = document.getElementById('resultFrame');
+    resultFrame.style.height = resultFrame.contentWindow.document.body.scrollHeight + 'px';
 }
 
 function resetPage() {
-    document.getElementById('result').innerHTML = '';
+    document.getElementById('resultFrame').style.display = 'none';
 }
 </script>

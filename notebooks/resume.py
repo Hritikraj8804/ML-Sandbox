@@ -14,4 +14,4 @@ model = DecisionTreeClassifier()
 model.fit(X, y)
 
 # Save the model
-joblib.dump(model, '../backend/model/placement_model.pkl')
+joblib.dump(model, '../backend/model/placement_model.pkl')  

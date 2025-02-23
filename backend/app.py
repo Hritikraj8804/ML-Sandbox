@@ -85,7 +85,7 @@ def process():
             prediction = model.predict(input_data)
             result = 'Yes' if prediction[0] == 1 else 'No'
 
-            return jsonify({'result': result})
+            return render_template('resresult.html', result=result)
 
         # Existing code for handling dataset and algorithm
         dataset = request.files['dataset']
