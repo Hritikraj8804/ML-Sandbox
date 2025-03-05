@@ -5,10 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="resresult">
-        <p>Will be Placed: {{ result }}</p>
+        <div class="result-header">
+            <h3><i class="fas fa-chart-line"></i> Placement Prediction Result</h3>
+            <div class="prediction-status {{ 'success' if result == 'Yes' else 'warning' }}">
+                <i class="fas {{ 'fa-check-circle' if result == 'Yes' else 'fa-exclamation-circle' }}"></i>
+                {{ result }}
+            </div>
+        </div>
+
+        <div class="result-grid">
+            <div class="result-card confidence">
+                <div class="card-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="card-content">
+                    <h4>Confidence Level</h4>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill"></div>
+                    </div>
+                    <p class="confidence-value">{{ "%.1f"|format(probability) }}%</p>
+                </div>
+            </div>
+
+            <div class="result-card gpa">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="card-content">
+                    <h4>GPA Score</h4>
+                    <p class="value">{{ "%.1f"|format(gpa) }}</p>
+                    <div class="gpa-bar">
+                        <div class="gpa-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card skills">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="card-content">
+                    <h4>Technical Skills</h4>
+                    <p class="value">{{ technical_skills }}</p>
+                    <div class="skills-bar">
+                        <div class="skills-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card communication">
+                <div class="card-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="card-content">
+                    <h4>Communication</h4>
+                    <p class="value">{{ communication }}</p>
+                    <div class="communication-bar">
+                        <div class="communication-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-summary">
+            <h4><i class="fas fa-list"></i> Input Summary</h4>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <span class="label">Internships:</span>
+                    <span class="value">{{ internships }}</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Projects:</span>
+                    <span class="value">{{ projects }}</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Backlogs:</span>
+                    <span class="value">{{ backlog }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+            <div class="recommendation-list">
+                {% if result == 'No' %}
+                    <p><i class="fas fa-arrow-up"></i> Consider improving your GPA</p>
+                    <p><i class="fas fa-briefcase"></i> Try to get more internship experience</p>
+                    <p><i class="fas fa-code-branch"></i> Work on more projects</p>
+                    <p><i class="fas fa-book"></i> Focus on clearing backlogs</p>
+                {% else %}
+                    <p><i class="fas fa-star"></i> Maintain your current performance</p>
+                    <p><i class="fas fa-chart-bar"></i> Keep building your skills</p>
+                    <p><i class="fas fa-network-wired"></i> Expand your professional network</p>
+                {% endif %}
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Set progress bar widths after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get values from template variables
+            const predProbability = {{ probability }};
+            const studentGPA = {{ gpa }};
+            const techSkillsCount = {{ technical_skills }};
+            
+            // Convert communication text to numeric value
+            const commText = "{{ communication }}";
+            let commValue = 0;
+            if (commText === "Limited") commValue = 0;
+            else if (commText === "Adequate") commValue = 1;
+            else if (commText === "Strong") commValue = 2;
+
+            // Set widths for each progress bar
+            document.querySelector('.confidence-fill').style.width = `${predProbability}%`;
+            document.querySelector('.gpa-fill').style.width = `${(studentGPA/10)*100}%`;
+            document.querySelector('.skills-fill').style.width = `${(techSkillsCount/10)*100}%`;
+            document.querySelector('.communication-fill').style.width = `${(commValue/2)*100}%`;
+        });
+    </script>
 </body>
 </html>

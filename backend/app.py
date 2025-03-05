@@ -68,10 +68,13 @@ def process():
             return jsonify({'error': result.stderr}), 500
 
         # Load the trained model
-        model = joblib.load(model_path)
+        model_data = joblib.load(model_path)
+        model = model_data['model']
+        feature_names = model_data['feature_names']
 
         # Check if the request contains form data for prediction
         if 'gpa' in request.form:
+            # Convert form data to appropriate types
             gpa = float(request.form['gpa'])
             internships = int(request.form['internship'])
             technical_skills = len(request.form.getlist('technical[]'))
@@ -79,14 +82,31 @@ def process():
             projects = int(request.form['project'])
             backlog = int(request.form['backlog'])
 
-            # Create input array for prediction
+            # Create input array for prediction with feature names
             input_data = np.array([[gpa, internships, technical_skills, communication, projects, backlog]])
+            
+            # Create DataFrame with feature names
+            import pandas as pd
+            input_df = pd.DataFrame(input_data, columns=feature_names)
 
-            # Make prediction
-            prediction = model.predict(input_data)
+            # Make prediction and get probability
+            prediction = model.predict(input_df)
+            probability = model.predict_proba(input_df)[0][1] * 100  # Probability of being placed
             result = 'Yes' if prediction[0] == 1 else 'No'
 
-            return render_template('resresult.html', result=result)
+            # Get communication skill level text
+            communication_levels = ['Limited', 'Adequate', 'Strong']
+            communication_text = communication_levels[communication]
+
+            return render_template('resresult.html', 
+                                 result=result,
+                                 probability=round(probability, 2),
+                                 gpa=gpa,
+                                 internships=internships,
+                                 technical_skills=technical_skills,
+                                 communication=communication_text,
+                                 projects=projects,
+                                 backlog=backlog)
 
         # Existing code for handling dataset and algorithm
         dataset = request.files['dataset']
