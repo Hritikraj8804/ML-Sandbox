@@ -1230,6 +1230,10 @@ form {
 @media screen and (max-width: 768px) {
     .hamburger {
         display: flex;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
     }
 
     .page01 {
@@ -1237,8 +1241,11 @@ form {
         left: -250px;
         top: 0;
         height: 100vh;
+        width: 250px;
         z-index: 999;
         transition: left 0.3s ease;
+        background-color: #f4f4f4;
+        overflow-y: auto;
     }
 
     .page01.active {
@@ -1247,17 +1254,19 @@ form {
 
     .page02 {
         margin-left: 0;
+        padding-top: 60px;
     }
 
     .menu {
         padding-top: 60px;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
     }
 
     .menu_sel_1 {
         padding: 1rem;
-    }
-
-    .menu_sel_1 p {
+        margin: 0.5rem 0;
         font-size: 1.2rem;
     }
 
@@ -1272,5 +1281,114 @@ form {
 
     .hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Dark mode adjustments for mobile menu */
+    .dark-mode .page01 {
+        background-color: #272727;
+    }
+
+    .dark-mode .menu_sel_1 {
+        background-color: #404040;
+        color: white;
+    }
+
+    .dark-mode .menu_sel_1:hover {
+        background-color: #1adc00;
+    }
+
+    .dark-mode .menu .active .menu_sel_1 {
+        background-color: #FFD700;
+        color: black;
+    }
+
+    /* Other mobile styles */
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .dashboardL {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboardR {
+        width: auto;
+        padding: 5px;
+    }
+
+    .h2li {
+        font-size: 1.2rem;
+    }
+
+    .usercnt {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .usercnt11 {
+        font-size: 0.9rem;
+    }
+
+    .indpage1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .indpage2 {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.4;
+    }
+
+    .checkbox-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .checkbox-item {
+        width: 100%;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn button {
+        width: 100%;
+    }
+
+    #resultFrame {
+        height: 400px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .result-card {
+        padding: 15px;
+    }
+
+    .card-content h4 {
+        font-size: 1rem;
+    }
+
+    .card-content .value {
+        font-size: 1.5rem;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-list p {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }
