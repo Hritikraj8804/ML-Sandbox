@@ -65,3 +65,22 @@ function adjustIframeHeight() {
     const iframe = document.getElementById('resultFrame');
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
 }
+
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const page01 = document.querySelector('.page01');
+
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        page01.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!page01.contains(event.target) && !hamburger.contains(event.target)) {
+            hamburger.classList.remove('active');
+            page01.classList.remove('active');
+        }
+    });
+});
