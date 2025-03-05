@@ -6,7 +6,7 @@ import joblib
 data = pd.read_csv('../data/sample_datasets/placement_data.csv')
 
 # Preprocess the data
-X = data[['GPA', 'Internships', 'Technical_Skills', 'Communication_Skills', 'Projects']]
+X = data[['GPA', 'Internships', 'Technical_Skills', 'Communication_Skills', 'Projects', 'Backlog']]
 y = data['Placed'].apply(lambda x: 1 if x == 'Yes' else 0)
 
 # Train the model

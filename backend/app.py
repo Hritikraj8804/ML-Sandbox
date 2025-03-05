@@ -77,9 +77,10 @@ def process():
             technical_skills = len(request.form.getlist('technical[]'))
             communication = int(request.form['communication'])
             projects = int(request.form['project'])
+            backlog = int(request.form['backlog'])
 
             # Create input array for prediction
-            input_data = np.array([[gpa, internships, technical_skills, communication, projects]])
+            input_data = np.array([[gpa, internships, technical_skills, communication, projects, backlog]])
 
             # Make prediction
             prediction = model.predict(input_data)
